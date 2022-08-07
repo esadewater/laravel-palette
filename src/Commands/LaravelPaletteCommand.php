@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Esadewater\LaravelPalette\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelPaletteCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-palette';
 
     public $description = 'My command';
 
