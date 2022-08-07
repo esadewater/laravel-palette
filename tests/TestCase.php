@@ -1,10 +1,10 @@
 <?php
 
-namespace Esadewater\LaravelPalette\Tests;
+namespace ESadewater\LaravelPalette\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Esadewater\LaravelPalette\LaravelPaletteServiceProvider;
+use ESadewater\LaravelPalette\LaravelPaletteServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Esadewater\\LaravelPalette\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'ESadewater\\LaravelPalette\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

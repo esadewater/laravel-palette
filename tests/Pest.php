@@ -1,5 +1,5 @@
 <?php
 
-use Esadewater\LaravelPalette\Tests\TestCase;
+use ESadewater\LaravelPalette\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

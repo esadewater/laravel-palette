@@ -1,6 +1,6 @@
 <?php
 
-// config for Esadewater/LaravelPalette
+// config for ESadewater/LaravelPalette
 return [
 
 ];

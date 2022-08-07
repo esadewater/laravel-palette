@@ -1,16 +1,19 @@
 <?php
 
-namespace Esadewater\LaravelPalette\Facades;
+namespace ESadewater\LaravelPalette\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Esadewater\LaravelPalette\LaravelPalette
+ * @see \ESadewater\LaravelPalette\LaravelPalette
  */
 class LaravelPalette extends Facade
 {
-    protected static function getFacadeAccessor()
+    /**
+     * @return class-string<\ESadewater\LaravelPalette\LaravelPalette>
+     */
+    protected static function getFacadeAccessor(): string
     {
-        return \Esadewater\LaravelPalette\LaravelPalette::class;
+        return \ESadewater\LaravelPalette\LaravelPalette::class;
     }
 }

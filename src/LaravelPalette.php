@@ -1,16 +1,27 @@
 <?php
 
-namespace Esadewater\LaravelPalette;
+namespace ESadewater\LaravelPalette;
 
 use MikeAlmond\Color\Color;
 use MikeAlmond\Color\PaletteGenerator;
 
 class LaravelPalette
 {
-    public function test()
+    /**
+     * @return Color
+     */
+    public function randomColor(): Color
     {
-        $color     = Color::fromCssColor('RebeccaPurple');
-        $generator = new PaletteGenerator($color);
-        $palette   = $generator->triad(40);
+        return Color::fromRgb(rand(0, 255), rand(0, 255), rand(0,255));
+    }
+
+    /**
+     * @param Color $color
+     * @param int $steps
+     * @return array
+     */
+    public function palette(Color $color, int $steps = 9): array
+    {
+        return (new PaletteGenerator($color))->monochromatic($steps);
     }
 }

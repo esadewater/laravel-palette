@@ -35,13 +35,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Esadewater\\LaravelPalette\\": "src",
-            "Esadewater\\LaravelPalette\\Database\\Factories\\": "database/factories"
+            "ESadewater\\LaravelPalette\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Esadewater\\LaravelPalette\\Tests\\": "tests"
+            "ESadewater\\LaravelPalette\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -60,10 +59,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Esadewater\\LaravelPalette\\LaravelPaletteServiceProvider"
+                "ESadewater\\LaravelPalette\\LaravelPaletteServiceProvider"
             ],
             "aliases": {
-                "LaravelPalette": "Esadewater\\LaravelPalette\\Facades\\LaravelPalette"
+                "LaravelPalette": "ESadewater\\LaravelPalette\\Facades\\LaravelPalette"
             }
         }
     },

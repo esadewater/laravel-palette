@@ -55,8 +55,8 @@ php artisan vendor:publish --tag="laravel-palette-views"
 ## Usage
 
 ```php
-$laravelPalette = new Esadewater\LaravelPalette();
-echo $laravelPalette->echoPhrase('Hello, Esadewater!');
+$laravelPalette = new ESadewater\LaravelPalette();
+echo $laravelPalette->echoPhrase('Hello, ESadewater!');
 ```
 
 ## Testing
