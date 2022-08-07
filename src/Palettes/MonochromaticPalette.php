@@ -13,10 +13,10 @@ class MonochromaticPalette implements Palette
     private Collection $colors;
 
     /**
-     * @param Color $baseColor
-     * @param int $steps
+     * @param  Color  $baseColor
+     * @param  int  $steps
      */
-    private final function __construct(Color $baseColor, int $steps)
+    final private function __construct(Color $baseColor, int $steps)
     {
         $generator = new PaletteGenerator($baseColor);
         $colors = $generator->monochromatic($steps);
@@ -25,8 +25,8 @@ class MonochromaticPalette implements Palette
     }
 
     /**
-     * @param Color $baseColor
-     * @param int $steps
+     * @param  Color  $baseColor
+     * @param  int  $steps
      * @return MonochromaticPalette
      */
     public static function fromColor(Color $baseColor, int $steps = self::DEFAULT_STEPS): MonochromaticPalette
@@ -35,20 +35,20 @@ class MonochromaticPalette implements Palette
     }
 
     /**
-     * @param int $steps
+     * @param  int  $steps
      * @return MonochromaticPalette
      */
     public static function fromRandomColor(int $steps = self::DEFAULT_STEPS): MonochromaticPalette
     {
-        $baseColor = Color::fromRgb(rand(0, 255), rand(0, 255), rand(0,255));;
+        $baseColor = Color::fromRgb(rand(0, 255), rand(0, 255), rand(0, 255));
 
         return new MonochromaticPalette($baseColor, $steps);
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
-    function getColors(): Collection
+    public function getColors(): Collection
     {
         return $this->colors;
     }

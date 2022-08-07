@@ -9,14 +9,15 @@ use Throwable;
 abstract class BasePaletteFormatter implements PaletteFormatter
 {
     /**
-     * @param string $colorName
-     * @param Palette $palette
+     * @param  string  $colorName
+     * @param  Palette  $palette
      * @return View
      */
-    abstract function getTemplate(string $colorName, Palette $palette): View;
+    abstract public function getTemplate(string $colorName, Palette $palette): View;
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
+     *
      * @throws FormatException
      */
     public function format(string $colorName, Palette $palette): string

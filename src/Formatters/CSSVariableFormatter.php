@@ -7,15 +7,14 @@ use Illuminate\View\View;
 
 class CSSVariableFormatter extends BasePaletteFormatter
 {
-
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
-    function getTemplate(string $colorName, Palette $palette): View
+    public function getTemplate(string $colorName, Palette $palette): View
     {
         return view('css-variables-template', [
             'colorName' => $colorName,
-            'colors' => $palette->getColors()
+            'colors' => $palette->getColors(),
         ]);
     }
 }
