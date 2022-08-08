@@ -34,6 +34,9 @@
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
+        "files": [
+            "src/Helpers/blade-helpers.php"
+        ],
         "psr-4": {
             "ESadewater\\LaravelPalette\\": "src"
         }

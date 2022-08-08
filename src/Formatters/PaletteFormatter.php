@@ -7,9 +7,9 @@ use ESadewater\LaravelPalette\Palettes\Palette;
 interface PaletteFormatter
 {
     /**
-     * @param  string  $colorColorName
-     * @param  Palette  $palette
+     * @param string $colorName
+     * @param Palette $palette
      * @return mixed
      */
-    public function format(string $colorColorName, Palette $palette): string;
+    public function format(string $colorName, Palette $palette): string;
 }

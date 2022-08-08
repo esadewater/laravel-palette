@@ -12,7 +12,7 @@ class CSSVariableFormatter extends BasePaletteFormatter
      */
     public function getTemplate(string $colorName, Palette $palette): View
     {
-        return view('css-variables-template', [
+        return view('palette::css-variables-template', [
             'colorName' => $colorName,
             'colors' => $palette->getColors(),
         ]);

@@ -26,7 +26,7 @@ abstract class BasePaletteFormatter implements PaletteFormatter
             return $this->getTemplate($colorName, $palette)->render();
         } catch (Throwable $e) {
             report($e);
-            throw new FormatException($e);
+            throw new FormatException($e->getMessage());
         }
     }
 }

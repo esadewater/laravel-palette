@@ -2,13 +2,14 @@
 
 namespace ESadewater\LaravelPalette\Palettes;
 
+use ESadewater\LaravelPalette\LaravelPalette;
 use Illuminate\Support\Collection;
 use MikeAlmond\Color\Color;
 use MikeAlmond\Color\PaletteGenerator;
 
 class MonochromaticPalette implements Palette
 {
-    const DEFAULT_STEPS = 9;
+    const DEFAULT_STEPS = 8;
 
     private Collection $colors;
 
@@ -18,6 +19,7 @@ class MonochromaticPalette implements Palette
      */
     final private function __construct(Color $baseColor, int $steps)
     {
+        $baseColor = $this->getFixedBrightness($baseColor);
         $generator = new PaletteGenerator($baseColor);
         $colors = $generator->monochromatic($steps);
 
@@ -40,7 +42,7 @@ class MonochromaticPalette implements Palette
      */
     public static function fromRandomColor(int $steps = self::DEFAULT_STEPS): MonochromaticPalette
     {
-        $baseColor = Color::fromRgb(rand(0, 255), rand(0, 255), rand(0, 255));
+        $baseColor = LaravelPalette::randomColor();
 
         return new MonochromaticPalette($baseColor, $steps);
     }
@@ -51,5 +53,12 @@ class MonochromaticPalette implements Palette
     public function getColors(): Collection
     {
         return $this->colors;
+    }
+
+    private function getFixedBrightness(Color $color): Color
+    {
+        $hsl = $color->getHsl();
+
+        return Color::fromHsl($hsl['h'], $hsl['s'], .65);
     }
 }
