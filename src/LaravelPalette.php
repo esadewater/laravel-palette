@@ -3,7 +3,6 @@
 namespace ESadewater\LaravelPalette;
 
 use MikeAlmond\Color\Color;
-use MikeAlmond\Color\PaletteGenerator;
 
 class LaravelPalette
 {

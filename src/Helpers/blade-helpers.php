@@ -3,7 +3,7 @@
 use Illuminate\Support\Str;
 use MikeAlmond\Color\Color;
 
-if (!function_exists('a11y')) {
+if (! function_exists('a11y')) {
     /**
      * Get complimentary text color
      */
@@ -13,7 +13,7 @@ if (!function_exists('a11y')) {
     }
 }
 
-if (!function_exists('color')) {
+if (! function_exists('color')) {
     /**
      * Format color:
      * - rgb: 'r, g, b'
@@ -22,8 +22,8 @@ if (!function_exists('color')) {
     function color(Color $color, string $format = 'rgb'): string
     {
         return match (Str::lower($format)) {
-            'hex' => '#' . $color->getHex(),
-            default => $color->getRgb()['r'] . ", " . $color->getRgb()['g'] . ", " . $color->getRgb()['b']
+            'hex' => '#'.$color->getHex(),
+            default => $color->getRgb()['r'].', '.$color->getRgb()['g'].', '.$color->getRgb()['b']
         };
     }
 }

@@ -27,10 +27,11 @@ class LaravelPaletteServiceProvider extends PackageServiceProvider
         Blade::directive('palette', function (string $expression) {
             [$name, $baseColor] = self::parseMultipleArgs($expression, 2);
 
-            if ($baseColor === null)
+            if ($baseColor === null) {
                 $palette = "\ESadewater\LaravelPalette\Palettes\MonochromaticPalette::fromRandomColor()";
-            else
+            } else {
                 $palette = "\ESadewater\LaravelPalette\Palettes\MonochromaticPalette::fromColor($baseColor)";
+            }
 
             return "<?php
                 \$palette = $palette;
@@ -41,7 +42,7 @@ class LaravelPaletteServiceProvider extends PackageServiceProvider
 
     /**
      * @param $expression
-     * @param int $numArgs
+     * @param  int  $numArgs
      * @return array
      */
     private static function parseMultipleArgs($expression, int $numArgs = 0): array
