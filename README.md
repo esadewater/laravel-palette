@@ -1,22 +1,6 @@
+# Laravel Dynamic Colors
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
-
-# This is my package laravel-palette
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/esadewater/laravel-palette.svg?style=flat-square)](https://packagist.org/packages/esadewater/laravel-palette)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/esadewater/laravel-palette/run-tests?label=tests)](https://github.com/esadewater/laravel-palette/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/esadewater/laravel-palette/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/esadewater/laravel-palette/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/esadewater/laravel-palette.svg?style=flat-square)](https://packagist.org/packages/esadewater/laravel-palette)
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-palette.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-palette)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+This package dynamically generates color palettes with different shades for usage with e.g. Tailwind-CSS.
 
 ## Installation
 
@@ -26,37 +10,61 @@ You can install the package via composer:
 composer require esadewater/laravel-palette
 ```
 
-You can publish and run the migrations with:
+[//]: # (You can publish the config file with:)
 
-```bash
-php artisan vendor:publish --tag="laravel-palette-migrations"
-php artisan migrate
-```
+[//]: # ()
+[//]: # (```bash)
 
-You can publish the config file with:
+[//]: # (php artisan vendor:publish --tag="laravel-palette-config")
 
-```bash
-php artisan vendor:publish --tag="laravel-palette-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-palette-views"
-```
+[//]: # (```)
 
 ## Usage
 
+In Blade-Layout add new Palette with name and random colors:
+
 ```php
-$laravelPalette = new ESadewater\LaravelPalette();
-echo $laravelPalette->echoPhrase('Hello, ESadewater!');
+@palette('primary')
+```
+
+This will generate the following style:
+
+```html
+<style>
+    :root {
+        --color-primary-100: 244, 250, 246;
+        --color-primary-200: 219, 242, 228;
+        --color-primary-300: 195, 235, 209;
+        --color-primary-400: 171, 224, 191;
+        --color-primary-500: 147, 217, 172;
+        --color-primary-600: 123, 207, 154;
+        --color-primary-700: 98, 199, 135;
+        --color-primary-800: 74, 189, 116;
+        --color-primary-900: 61, 168, 101;
+    }
+</style>
+```
+
+You can use this colors with e.g. Tailwind-CSS:
+
+```javascript
+theme: {
+    extend: {
+        colors: {
+            primary: {
+                100: "--color-primary-100",
+                200: "--color-primary-200",
+                300: "--color-primary-300",
+                400: "--color-primary-400",
+                500: "--color-primary-500",
+                600: "--color-primary-600",
+                700: "--color-primary-700",
+                800: "--color-primary-800",
+                900: "--color-primary-900"
+            }
+        }
+    }
+}
 ```
 
 ## Testing

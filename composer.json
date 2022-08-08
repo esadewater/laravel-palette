@@ -1,6 +1,6 @@
 {
     "name": "esadewater/laravel-palette",
-    "description": "This is my package laravel-palette",
+    "description": "Automatically generate color palettes for your Laravel-Application.",
     "keywords": [
         "esadewater",
         "laravel",
