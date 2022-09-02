@@ -52,8 +52,6 @@ class LaravelPaletteServiceProvider extends PackageServiceProvider
         for ($i = 0; $i < $numArgs; $i++) {
             if (array_key_exists($i, $args)) {
                 $args[$i] = trim($args[$i]);
-                $args[$i] = preg_replace('~^[\'"]?(.*?)[\'"]?$~', '$1', $args[$i]);
-                $args[$i] = json_encode($args[$i]);
             } else {
                 $args[$i] = null;
             }
