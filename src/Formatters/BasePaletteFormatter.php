@@ -8,11 +8,6 @@ use Throwable;
 
 abstract class BasePaletteFormatter implements PaletteFormatter
 {
-    /**
-     * @param  string  $colorName
-     * @param  Palette  $palette
-     * @return View
-     */
     abstract public function getTemplate(string $colorName, Palette $palette): View;
 
     /**

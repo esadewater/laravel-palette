@@ -13,10 +13,6 @@ class MonochromaticPalette implements Palette
 
     private Collection $colors;
 
-    /**
-     * @param  Color  $baseColor
-     * @param  int  $steps
-     */
     final private function __construct(Color $baseColor, int $steps)
     {
         $baseColor = $this->getFixedBrightness($baseColor);
@@ -26,20 +22,11 @@ class MonochromaticPalette implements Palette
         $this->colors = collect($colors);
     }
 
-    /**
-     * @param  Color  $baseColor
-     * @param  int  $steps
-     * @return MonochromaticPalette
-     */
     public static function fromColor(Color $baseColor, int $steps = self::DEFAULT_STEPS): MonochromaticPalette
     {
         return new MonochromaticPalette($baseColor, $steps);
     }
 
-    /**
-     * @param  int  $steps
-     * @return MonochromaticPalette
-     */
     public static function fromRandomColor(int $steps = self::DEFAULT_STEPS): MonochromaticPalette
     {
         $baseColor = LaravelPalette::randomColor();

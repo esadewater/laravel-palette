@@ -40,11 +40,6 @@ class LaravelPaletteServiceProvider extends PackageServiceProvider
         });
     }
 
-    /**
-     * @param $expression
-     * @param  int  $numArgs
-     * @return array
-     */
     private static function parseMultipleArgs($expression, int $numArgs = 0): array
     {
         $args = explode(',', $expression);
