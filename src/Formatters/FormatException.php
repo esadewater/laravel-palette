@@ -4,6 +4,4 @@ namespace ESadewater\LaravelPalette\Formatters;
 
 use Exception;
 
-class FormatException extends Exception
-{
-}
+class FormatException extends Exception {}
