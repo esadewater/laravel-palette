@@ -5,7 +5,7 @@
 <style>
     :root {
         @foreach($colors as $color)
-            --color-{{ $colorName }}-{{ $loop->index + 1 }}00: {{ color($color) }};
+            --color-{{ $colorName }}-{{ $loop->index + 1 }}00: rgb({{ color($color) }});
         @endforeach
     }
 </style>
